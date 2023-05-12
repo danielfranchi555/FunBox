@@ -37,7 +37,7 @@ const Page = () => {
       notify();
       setSuccess([]);
     }
-  }, [success]);
+  }, [success,images.length]);
 
   return (
     <div
