@@ -84,7 +84,7 @@ function ContainerThree() {
               transition={{ duration: 1 }}
             >
               <h1>Game finished</h1>
-              <h2> Answers Corrects: {point}</h2>
+              <h2> Answers Corrects: {point}/10</h2>
               <button
                 onClick={() => reset()}
                 class="button-82-pushable"
