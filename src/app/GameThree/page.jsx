@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Icon from "./Icon";
 
-const page = () => {
+const Page = () => {
   const [turn, setTurn] = useState("x");
   const [cells, setCells] = useState(["", "", "", "", "", "", "", "", ""]);
   const [active, setActive] = useState(false);
@@ -89,4 +89,4 @@ const page = () => {
     </div>
   );
 };
-export default page;
+export default Page;

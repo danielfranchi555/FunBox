@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./GameOne.scss";
 
-const page = () => {
+const Page = () => {
   const { images } = allImages;
   const [success, setSuccess] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -90,4 +90,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
