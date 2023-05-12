@@ -32,32 +32,54 @@ const ContainerTwo = () => {
       console.log(turn);
     }
   };
-  const notifyX = () => toast("X WIN !!", { autoClose: false });
-  const notifyO = () => toast("O WIN !!", { autoClose: false });
-  const notifyEmpate = () => toast("TIE !!", { autoClose: false });
+
+
+
 
   const reset = () => {
     setCells(["", "", "", "", "", "", "", "", ""]);
   };
 
+const WinnerX = () => toast(" PLAYEY  'X'  WINNER!");
+const Winneer0 = () => toast(" PLAYEY  'O'  WINNER!");
+const Draw = () => toast(" DRAW !");
+
+
+  function GanadorX() {
+     WinnerX() 
+    GanadorX = function() {}; // se sobrescribe la función con una versión vacía
+  }
+  
+
+  function GanadorO() {
+    Winneer0()
+    GanadorO = function() {}; // se sobrescribe la función con una versión vacía
+  }
+  function empate() {
+     Draw() 
+    empate = function() {}; // se sobrescribe la función con una versión vacía
+  }
+
   useEffect(() => {
     for (let player of cells) {
       let winner;
-      const hanswon = winning.some((comp) =>
-        comp.every((cell) => player === cells[cell])
-      );
+      const hanswon = winning.some((comp) => comp.every((cell) => player === cells[cell]));
       if (hanswon) {
         winner = player;
+        console.log(winner)
       }
-      if (cells.every((str) => str.length > 0)) {
-        notifyEmpate();
+       if (cells.every((str) => str.length > 0)) {
+      empate()
       } else if (winner === "x") {
-        notifyX()
+       GanadorX()
       } else if (winner === "o") {
-        notifyO()
-      }
+     GanadorO()
+      } 
     }
   }, [cells]);
+
+
+
 
   return (
     <div
@@ -73,11 +95,8 @@ const ContainerTwo = () => {
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{duration:2}}
-      style={{color:'white',marginBottom:'20px'}}> Ta Te Ti</motion.h2>
+      style={{color:'white',marginBottom:'20px',fontWeight:'500',fontFamily:'fantasy',fontSize:'50px',marginTop:'20px'}}> Ta Te Ti</motion.h2>
       <motion.div
-          initial={{ y: "-1000" }}
-          animate={{ y:0 }}
-          transition={{ duration: 1 }}
         className="grid"
       >
         {cells.map((item, index) => (

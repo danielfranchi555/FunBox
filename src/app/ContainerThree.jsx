@@ -13,7 +13,8 @@ function ContainerThree() {
   const [point, setPoint] = useState(0);
 
   const allQuestion = info[position];
-
+  
+  console.log(allQuestion)
   const getData = async () => {
     const resp = await fetch("https://opentdb.com/api.php?amount=10");
     const data = await resp.json();
@@ -24,7 +25,6 @@ function ContainerThree() {
 
   useEffect(() => {
     getData();
-
   }, []);
 
   const selectedAnswer = (item) => {
@@ -36,11 +36,7 @@ function ContainerThree() {
       toast.error("Answer Incorrect", { autoClose: 1000 });
       setPosition(position + 1);
     }
-    
-
   };
-
-
 
   const allAnswers = [
     allQuestion ? allQuestion.incorrect_answers : null,
@@ -64,11 +60,10 @@ function ContainerThree() {
     );
   }
 
-
-  const reset=()=>{
-    setPosition(0)
-    setPoint(0)
-  }
+  const reset = () => {
+    setPosition(0);
+    setPoint(0);
+  };
 
   return (
     <>
@@ -78,26 +73,23 @@ function ContainerThree() {
         transition={{ duration: 2 }}
         className="container"
       >
+        <h1 className="title">Question Pro</h1>
+
         <div className="main">
           {info.length === position ? (
             <motion.div
+            className="ternary"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
-              style={{
-                color: "white",
-                gap: "20px",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                width: "100%",
-                height: "100%",
-                flexDirection: "column",
-              }}
             >
               <h1>Game finished</h1>
               <h2> Answers Corrects: {point}</h2>
-              <button onClick={()=>reset()} class="button-82-pushable" role="button">
+              <button
+                onClick={() => reset()}
+                class="button-82-pushable"
+                role="button"
+              >
                 <span class="button-82-shadow"></span>
                 <span class="button-82-edge"></span>
                 <span class="button-82-front text">Play Again</span>
@@ -109,13 +101,7 @@ function ContainerThree() {
                 <h2>Category/ {allQuestion ? allQuestion.category : null}</h2>
               </div>
               <div className="questions">
-                <h2
-                  style={{
-                    textAlign: "center",
-                    color: "white",
-                    fontSize: "15px",
-                  }}
-                >
+                <h2>
                   {allQuestion
                     ? allQuestion.question.replace(
                         /=|&|#|0|3|9|quot|quo|Index|;/g,
@@ -131,15 +117,10 @@ function ContainerThree() {
               </div>
 
               <div
-                style={{
-                  height: "400px",
-                  width: "450px",
-                  marginTop: "10px",
-                  marginBottom: "10px",
-                }}
+               className="answers-container"
               >
                 <h2>
-                  {allAnswers.sort().map((item) => (
+                  {allAnswers?allAnswers.sort().map((item) => (
                     <div key={item} className="answers">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
@@ -150,7 +131,10 @@ function ContainerThree() {
                         {item.replace(/=|&|#|0|3|9|quot|quo|Index|;/g, "")}
                       </motion.button>
                     </div>
-                  ))}
+                  ))
+                :
+                null
+                }
                 </h2>
               </div>
             </>

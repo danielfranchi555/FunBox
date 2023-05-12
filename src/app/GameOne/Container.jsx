@@ -6,7 +6,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./GameOne.scss";
 import Image from "next/image";
-import pointer from '../../images/pointer.png'
+import pointer from "../../images/pointer.png";
 
 const Container = () => {
   const { images } = allImages;
@@ -19,27 +19,24 @@ const Container = () => {
     }
   };
 
-  const reset = () => {
-    setSuccess([]);
-  };
 
   useEffect(() => {
     if (selected.length === 2) {
       if (selected[0].split("|")[1] === selected[1].split("|")[1]) {
         setSuccess((success) => success.concat(selected));
       }
-      setTimeout(() => setSelected([]), 700);
+      setTimeout(() => setSelected([]), 1000);
     }
   }, [selected]);
 
-  const notify = () => toast("Congratulations!!", { autoClose: false });
+  const Winner = () => toast(" Congratulations!");
 
   useEffect(() => {
     if (success.length === images.length) {
-      notify();
+      Winner();
       setSuccess([]);
     }
-  }, [success,images.length]);
+  }, [success, images.length]);
 
   return (
     <div
@@ -52,14 +49,24 @@ const Container = () => {
         flexDirection: "column",
       }}
     >
-      <h2 style={{ color: "white", marginBottom: "10px", fontSize:'50px',fontWeight:800 }}>Memo Test</h2>
+      <h2
+        style={{
+          color: "white",
+          marginBottom: "20px",
+          fontWeight: "500",
+          fontFamily: "fantasy",
+          fontSize: "50px",
+          marginTop: "20px",
+        }}
+      >
+        Memo Test
+      </h2>
       <motion.div
         initial={{ y: "-1000px" }}
         animate={{ y: 0 }}
         transition={{ duration: 1.0 }}
         className="grid-container"
       >
-        
         {images.map((item) => {
           const [, url] = item.split("|");
 
@@ -74,7 +81,11 @@ const Container = () => {
                 <Image
                   width={100}
                   height={100}
-                  style={{  justifyContent: "center",backgroundColor:'black',borderRadius:'5px' }}
+                  style={{
+                    justifyContent: "center",
+                    backgroundColor: "black",
+                    borderRadius: "5px",
+                  }}
                   src={url}
                   className="img"
                   alt="image"
@@ -85,7 +96,7 @@ const Container = () => {
                   height={20}
                   width={20}
                   className="img-default"
-                  style={{ justifyContent: "center"}}
+                  style={{ justifyContent: "center" }}
                   src={pointer}
                 ></Image>
               )}

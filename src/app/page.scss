@@ -4,6 +4,16 @@
   align-items: center;
   width: 100%;
   height: 100vh;
+  flex-direction: column;
+  gap: 10px;
+  .title{
+    color: white;
+    margin-bottom: '20px';
+    font-weight: 500;
+    font-family: fantasy;
+    font-size: 50px;
+    margin-top: 30px;
+  }
   .main {
     height: 500px;
     width: 400px;
@@ -12,19 +22,29 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    .ternary{
+      color: white;
+      gap: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      flex-direction: column;
+    }
     .category {
       width: 350px;
       margin-bottom: 10px;
       margin-top: 10px;
+      font-size: 9px;
       height: 50px;
-      background-color: #222831;
+      background-color: #333435;
       border-radius: 15px;
       display: flex;
       align-items: center;
       justify-content: center;
       h2 {
         text-align: center;
-        font-size: 14px;
         color: white;
       }
     }
@@ -37,12 +57,18 @@
       align-items: center;
       justify-content: center;
       padding: 10px;
+      h2{
+        text-align: center;
+        color: white;
+        font-size: 15px;
+      }
     }
     .difficulty {
       border: solid 1px gray;
       border-radius: 10px;
       padding: 10px;
       margin-top: 5px;
+      margin-bottom: 5px;
       p {
         color: white;
         font-weight: 800;
@@ -51,7 +77,12 @@
         color: #3bb4c1;
       }
     }
-    .answers {
+    .answers-container{
+      height: 400px;
+      width: 450px;
+      margin-top: 10px;
+      margin-bottom: 10px;
+       .answers {
       display: flex;
       flex-direction: column;
       margin-bottom: 20px;
@@ -65,6 +96,8 @@
         border-radius: 10px;
       }
     }
+    }
+   
   }
 }
 
@@ -76,7 +109,7 @@
     width: 100%;
     height: 100vh;
     .main {
-      height: 600px;
+      height: 500px;
       width: 350px;
       background-color: #222831;
       border-radius: 10px;
@@ -88,20 +121,21 @@
         margin-bottom: 10px;
         margin-top: 10px;
         height: 50px;
-        background-color: #41506b;
+        background-color: #333435;
         border-radius: 15px;
         display: flex;
         align-items: center;
         justify-content: center;
         h2 {
           text-align: center;
-          font-size: 14px;
+          font-size: 10px;
           color: white;
         }
       }
       .questions {
         height: 200px;
         width: 300px;
+        font-size: 12px;
         background-color: #3bb4c1;
         border-radius: 15px;
         display: flex;
@@ -117,32 +151,35 @@
         p {
           color: white;
           font-weight: 800;
+          font-size: 12px;
         }
         span {
           color: #3bb4c1;
         }
       }
-      .answers {
+      .answers-container{
+        height: 300px;
+        width: 300px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+         .answers {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        margin-bottom: 10px;
         align-items: center;
-        margin-bottom: 20px;
+        justify-content: center;
         button {
-          width: 300px;
           cursor: pointer;
+          width: 300px;
           height: 40px;
           background-color: white;
           border-radius: 10px;
         }
       }
+      }
     }
   }
 }
-
-
-
-
 
 .button-82-pushable {
   position: relative;
@@ -167,10 +204,7 @@
   background: hsl(0deg 0% 0% / 0.25);
   will-change: transform;
   transform: translateY(2px);
-  transition:
-    transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
 .button-82-edge {
@@ -196,13 +230,10 @@
   border-radius: 12px;
   font-size: 1.1rem;
   color: white;
-  background:#3bb4c1;
+  background: #3bb4c1;
   will-change: transform;
   transform: translateY(-4px);
-  transition:
-    transform
-    600ms
-    cubic-bezier(.3, .7, .4, 1);
+  transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
 }
 
 @media (min-width: 768px) {
@@ -219,10 +250,7 @@
 
 .button-82-pushable:hover .button-82-front {
   transform: translateY(-6px);
-  transition:
-    transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 .button-82-pushable:active .button-82-front {
@@ -232,10 +260,7 @@
 
 .button-82-pushable:hover .button-82-shadow {
   transform: translateY(4px);
-  transition:
-    transform
-    250ms
-    cubic-bezier(.3, .7, .4, 1.5);
+  transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
 }
 
 .button-82-pushable:active .button-82-shadow {

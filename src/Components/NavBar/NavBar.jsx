@@ -26,7 +26,7 @@ const NavBar = () => {
             transition={{ duration: 1.5 }}
           >
             <Image alt="image" width={40} src={question} />
-            <h2 style={{marginLeft:'5px'}}>Questions</h2>
+            <h2 style={{marginLeft:'5px'}}>QuestionPro</h2>
           </motion.li>
         </Link>
         <Link style={{ textDecoration: "none" }} href="/GameOne">

@@ -26,7 +26,7 @@ const NavBarMobile = () => {
               className="li-mobile"
             >
               <Image alt="image" width={40} src={question} />
-              <h3>Questions</h3>
+              <h3>QuestionPro</h3>
             </motion.li>
           </Link>
           <Link href="/GameOne" style={{textDecoration:'none'}}>
