@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./GameOne.scss";
+import Image from "next/image";
 
 const Page = () => {
   const { images } = allImages;
@@ -69,17 +70,17 @@ const Page = () => {
               key={item}
             >
               {selected.includes(item) || success.includes(item) ? (
-                <img
+                <Image
                   style={{ width: "60px", justifyContent: "center" }}
                   src={url}
                   alt=""
                 />
               ) : (
-                <img
+                <Image
                   key={item}
                   style={{ justifyContent: "center" ,width:'20px'}}
                   src="https://icongr.am/clarity/cursor-hand-click.svg?&color=currentColor"
-                ></img>
+                ></Image>
               )}
             </motion.div>
           );
