@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Icon from "./icon";
+import Icon from "./Icon";
 
 const page = () => {
   const [turn, setTurn] = useState("x");
