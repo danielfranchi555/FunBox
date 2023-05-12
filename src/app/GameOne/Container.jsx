@@ -72,13 +72,16 @@ const Container = () => {
             >
               {selected.includes(item) || success.includes(item) ? (
                 <Image
-                  style={{ width: "60px", justifyContent: "center" }}
+                 width={50}
+                 height={50}
+                  style={{  justifyContent: "center" }}
                   src={url}
                   alt=""
                 />
               ) : (
                 <Image
                   key={item}
+                  height={20}
                   width={20}
                   style={{ justifyContent: "center" }}
                   src={pointer}
