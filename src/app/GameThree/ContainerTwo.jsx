@@ -81,7 +81,7 @@ const ContainerTwo = () => {
         className="grid"
       >
         {cells.map((item, index) => (
-          <Icon handleClick={handleClick} item={item} index={index} />
+          <Icon key={index} handleClick={handleClick} item={item} index={index} />
         ))}
         <button onClick={() => reset()}>reset</button>
         <ToastContainer/>

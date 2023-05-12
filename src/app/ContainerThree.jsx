@@ -140,7 +140,7 @@ function ContainerThree() {
               >
                 <h2>
                   {allAnswers.sort().map((item) => (
-                    <div className="answers">
+                    <div key={item} className="answers">
                       <motion.button
                         whileHover={{ scale: 1.1 }}
                         transition={{ duration: 0.5 }}
