@@ -1,0 +1,27 @@
+.navBar {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+  align-items: center;
+  padding: 10px;
+  background-color: #f2f3f5;
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: flex-start;
+    list-style: none;
+    width: auto;
+    li{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 5px;
+        color: black;
+        border-radius: 10px;
+        font-size: 11px;
+    }
+  }
+}
+
+

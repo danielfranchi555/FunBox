@@ -1,0 +1,23 @@
+.grid {
+    display: inline-grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 5px;
+    align-items: center;
+    border: solid white;
+}
+
+.item{
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
+    padding: 20px;
+    font-size: 30px;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    cursor: pointer;
+    span{
+        font-size: 50px;
+        text-align: center;
+    }
+}
