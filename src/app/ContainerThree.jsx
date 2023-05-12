@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { RingLoader } from "react-spinners";
+import { BeatLoader } from "react-spinners";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./page.scss";
@@ -13,8 +13,8 @@ function ContainerThree() {
   const [point, setPoint] = useState(0);
 
   const allQuestion = info[position];
-  
-  console.log(allQuestion)
+
+  console.log(allQuestion);
   const getData = async () => {
     const resp = await fetch("https://opentdb.com/api.php?amount=10");
     const data = await resp.json();
@@ -55,7 +55,7 @@ function ContainerThree() {
           width: "100%",
         }}
       >
-        <RingLoader color="#36d7b7" width="200px" />
+        <BeatLoader color="#efefef" size={20} />{" "}
       </div>
     );
   }
@@ -78,7 +78,7 @@ function ContainerThree() {
         <div className="main">
           {info.length === position ? (
             <motion.div
-            className="ternary"
+              className="ternary"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1 }}
@@ -116,25 +116,22 @@ function ContainerThree() {
                 </p>
               </div>
 
-              <div
-               className="answers-container"
-              >
+              <div className="answers-container">
                 <h2>
-                  {allAnswers?allAnswers.sort().map((item) => (
-                    <div key={item} className="answers">
-                      <motion.button
-                        whileHover={{ scale: 1.1 }}
-                        transition={{ duration: 0.5 }}
-                        variant="outline-primary"
-                        onClick={() => selectedAnswer(item)}
-                      >
-                        {item.replace(/=|&|#|0|3|9|quot|quo|Index|;/g, "")}
-                      </motion.button>
-                    </div>
-                  ))
-                :
-                null
-                }
+                  {allAnswers
+                    ? allAnswers.sort().map((item) => (
+                        <div key={item} className="answers">
+                          <motion.button
+                            whileHover={{ scale: 1.1 }}
+                            transition={{ duration: 0.5 }}
+                            variant="outline-primary"
+                            onClick={() => selectedAnswer(item)}
+                          >
+                            {item.replace(/=|&|#|0|3|9|quot|quo|Index|;/g, "")}
+                          </motion.button>
+                        </div>
+                      ))
+                    : null}
                 </h2>
               </div>
             </>
