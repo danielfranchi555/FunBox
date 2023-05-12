@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./GameOne.scss";
-import pointer from '../../images/pointer.png'
 import Image from "next/image";
+import pointer from '../../images/pointer.png'
 
-const Page = () => {
+const Container = () => {
   const { images } = allImages;
   const [success, setSuccess] = useState([]);
   const [selected, setSelected] = useState([]);
@@ -72,22 +72,17 @@ const Page = () => {
             >
               {selected.includes(item) || success.includes(item) ? (
                 <Image
-                  width={60}
-                  height={60}
-                  style={{  justifyContent: "center" }}
+                  style={{ width: "60px", justifyContent: "center" }}
                   src={url}
                   alt=""
-                  dangerouslyAllowSvg={true}
                 />
               ) : (
                 <Image
-                  width={35}
-                  height={35}
                   key={item}
-                  style={{ justifyContent: "center" ,width:'20px'}}
+                  width={20}
+                  style={{ justifyContent: "center" }}
                   src={pointer}
-                  dangerouslyAllowSvg={true}
-                />
+                ></Image>
               )}
             </motion.div>
           );
@@ -98,4 +93,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Container;
