@@ -22,7 +22,7 @@ export default function RootLayout({ children }) {
           <div className='navbar-mobile'>
            <NavBarMobile/>
           </div>
-        <div className='children' style={{height: '100vh',backgroundColor:'#141010',display:'flex'}}>
+        <div className='children' style={{height: '100vh',backgroundColor:'#203e5f',display:'flex'}}>
         {children}
         </div>
         </div>

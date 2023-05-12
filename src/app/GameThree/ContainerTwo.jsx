@@ -83,9 +83,13 @@ const ContainerTwo = () => {
         {cells.map((item, index) => (
           <Icon key={index} handleClick={handleClick} item={item} index={index} />
         ))}
-        <button onClick={() => reset()}>reset</button>
         <ToastContainer/>
       </motion.div>
+      <button onClick={()=>reset()} class="button-82-pushable" role="button">
+                <span class="button-82-shadow"></span>
+                <span class="button-82-edge"></span>
+                <span class="button-82-front text">Play Again</span>
+              </button>
     </div>
   );
 };

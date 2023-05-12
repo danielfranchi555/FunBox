@@ -28,7 +28,7 @@ const Container = () => {
       if (selected[0].split("|")[1] === selected[1].split("|")[1]) {
         setSuccess((success) => success.concat(selected));
       }
-      setTimeout(() => setSelected([]), 1000);
+      setTimeout(() => setSelected([]), 700);
     }
   }, [selected]);
 
@@ -52,7 +52,7 @@ const Container = () => {
         flexDirection: "column",
       }}
     >
-      <h2 style={{ color: "#3bb4c1", marginBottom: "10px", fontSize:'50px',fontWeight:800 }}>Memo Test</h2>
+      <h2 style={{ color: "white", marginBottom: "10px", fontSize:'50px',fontWeight:800 }}>Memo Test</h2>
       <motion.div
         initial={{ y: "-1000px" }}
         animate={{ y: 0 }}
@@ -72,18 +72,20 @@ const Container = () => {
             >
               {selected.includes(item) || success.includes(item) ? (
                 <Image
-                 width={50}
-                 height={50}
-                  style={{  justifyContent: "center" }}
+                  width={100}
+                  height={100}
+                  style={{  justifyContent: "center",backgroundColor:'black',borderRadius:'5px' }}
                   src={url}
-                  alt=""
+                  className="img"
+                  alt="image"
                 />
               ) : (
                 <Image
                   key={item}
                   height={20}
                   width={20}
-                  style={{ justifyContent: "center" }}
+                  className="img-default"
+                  style={{ justifyContent: "center"}}
                   src={pointer}
                 ></Image>
               )}
