@@ -48,7 +48,7 @@ const NavBar = () => {
             whileHover={{ scale: 1.1 }}
           >
             <Image alt="image" width={40} src={ticTac} />
-            <h2 style={{marginLeft:'5px'}}>Tic Tac Toe</h2>
+            <h2 style={{marginLeft:'5px'}}>Ta Te Ti</h2>
           </motion.li>
         </Link>
       </ul>
