@@ -5,6 +5,8 @@ import { BeatLoader } from "react-spinners";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./page.scss";
+import Image from "next/image";
+import question from '../images/questions.png'
 
 function ContainerThree() {
   const [info, setInfo] = useState([]);
@@ -66,14 +68,17 @@ function ContainerThree() {
   };
 
   return (
-    <>
+    <div style={{display:'flex',flexDirection:'column',justifyContent:'center',alignItems:'center',width:'100%'}}>
+    <div style={{display:'flex', justifyContent:'center',gap:'30px' ,alignItems:'center', width:'500px',marginTop:'50px'}}>
+            <Image  width={50} height={50} src={question}/>
+            <h1 style={{color:'white'}} className="title">Question Pro</h1>
+          </div>
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 2 }}
         transition={{ duration: 2 }}
         className="container"
       >
-        <h1 className="title">Question Pro</h1>
 
         <div className="main">
           {info.length === position ? (
@@ -139,7 +144,7 @@ function ContainerThree() {
         </div>
       </motion.div>
       <ToastContainer />
-    </>
+    </div>
   );
 }
 

@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Icon from "./Icon";
+import logo from '../../images/tic-tac.png'
+import Image from "next/image";
 
 const ContainerTwo = () => {
   const [turn, setTurn] = useState("x");
@@ -91,11 +93,15 @@ const Draw = () => toast(" DRAW !");
         width: "100%",
       }}
     >
-      <motion.h2 
+      <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'20px'}}>
+        <Image width={50} src={logo}/>
+              <motion.h2 
       initial={{opacity:0}}
       animate={{opacity:1}}
       transition={{duration:2}}
-      style={{color:'white',marginBottom:'20px',fontWeight:'500',fontFamily:'fantasy',fontSize:'50px',marginTop:'20px'}}> Ta Te Ti</motion.h2>
+      style={{color:'white',marginBottom:'20px',fontWeight:'500',fontFamily:'fantasy',fontSize:'30px',marginTop:'20px'}}> Ta Te Ti</motion.h2>
+      </div>
+
       <motion.div
         className="grid"
       >

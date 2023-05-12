@@ -7,6 +7,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./GameOne.scss";
 import Image from "next/image";
 import pointer from "../../images/pointer.png";
+import logo from '../../images/memo-test.png'
 
 const Container = () => {
   const { images } = allImages;
@@ -49,18 +50,22 @@ const Container = () => {
         flexDirection: "column",
       }}
     >
-      <h2
+      <div style={{display:'flex',justifyContent:'center',alignItems:'center',gap:'20px'}}>
+        <Image width={50} src={logo}/>
+          <h2
         style={{
           color: "white",
           marginBottom: "20px",
           fontWeight: "500",
+          fontSize:'30px',
           fontFamily: "fantasy",
-          fontSize: "50px",
           marginTop: "20px",
         }}
       >
         Memo Test
       </h2>
+      </div>
+    
       <motion.div
         initial={{ y: "-1000px" }}
         animate={{ y: 0 }}
